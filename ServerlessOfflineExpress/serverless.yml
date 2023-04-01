@@ -1,0 +1,15 @@
+service: ServerlessOfflineExpress
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+plugins:
+  - serverless-offline
+
+functions:
+  api:
+    handler: src/controllers/index.handler
+    events:
+      - httpApi: '*'
